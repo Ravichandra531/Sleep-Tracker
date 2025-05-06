@@ -1,0 +1,26 @@
+.dashboard {
+    background-color: #0e0b1d;
+    color: white;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dashboard h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white; 
+    margin-bottom: 1rem;
+  }
+  
+  .dashboard p {
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    max-width: 600px;
+  }
+  
