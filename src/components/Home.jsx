@@ -7,8 +7,8 @@ function Home() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // Replace with your actual API endpoint
-    fetch('https://pillowapp.com/developers')
+
+    fetch('')
       .then((res) => {
         if (!res.ok) throw new Error('Failed to fetch sleep data');
         return res.json();
