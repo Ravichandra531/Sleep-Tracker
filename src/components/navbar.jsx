@@ -11,6 +11,7 @@ export default function Navbar() {
             <li><Link to="/Stats">Stats</Link></li>
             <li><Link to="/Profile">Profile</Link></li>
             <li><Link to="/Login">Login</Link></li>
+            <li><Link to="/Add">Add Sleep</Link></li>
             <li></li>
         </ul>
     </nav>

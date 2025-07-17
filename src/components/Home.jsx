@@ -1,27 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
+
+const STORAGE_KEY = 'sleep-data';
 
 function Home() {
   const [sleepData, setSleepData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [error,   setError] = useState('');
 
   useEffect(() => {
-
-    fetch('')
-      .then((res) => {
-        if (!res.ok) throw new Error('Failed to fetch sleep data');
-        return res.json();
-      })
-      .then((data) => {
-        setSleepData(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
+    const stored = JSON.parse(localStorage.getItem('sleep-data')) || [];
+    setSleepData(stored);
+    setLoading(false);
   }, []);
+
 
   return (
     <div className="dashboard">
