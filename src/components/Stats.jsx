@@ -5,7 +5,7 @@ export default function Stats() {
   const [avg, setAvg] = useState(null);
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("sleepData") || "[]");
+    const data = JSON.parse(localStorage.getItem("sleep-data") || "[]");
     if (data.length === 0) return;
     const total = data.reduce((sum, r) => sum + parseFloat(r.hours || 0), 0);
     setAvg((total / data.length).toFixed(2));
