@@ -10,7 +10,7 @@ function Home() {
   const [error,   setError] = useState('');
 
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem('sleep-data')) || [];
+    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
     setSleepData(stored);
     setLoading(false);
   }, []);

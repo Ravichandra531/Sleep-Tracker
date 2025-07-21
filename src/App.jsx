@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/navbar';
 import Home from './components/Home';
 import Stats from './components/Stats';
 import Login from './components/Login';
 import SleepForm from './components/SleepForm';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
