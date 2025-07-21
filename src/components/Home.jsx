@@ -5,50 +5,38 @@ import './Home.css';
 const STORAGE_KEY = 'sleep-data';
 
 function Home() {
+  const [userName, setUserName] = useState('');
   const [sleepData, setSleepData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error,   setError] = useState('');
 
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-    setSleepData(stored);
-    setLoading(false);
+    const storedName = localStorage.getItem('user-name') || '';
+    setUserName(storedName);
+    const storedData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+    setSleepData(storedData);
   }, []);
 
-
   return (
-    <div className="dashboard">
-      <h1>Track your sleep, wake up fresh</h1>
-      <p>Start your journey to better sleep with insights, analytics, and personalized tracking.</p>
-      {loading && <p>Loading sleep data...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {!loading && !error && (
-        <div>
-          <h2>Your Sleep Records</h2>
-          {sleepData.length === 0 ? (
-            <p>No sleep records found.</p>
-          ) : (
-            <table style={{ margin: '0 auto', color: 'white', background: '#1a1830', borderRadius: '8px' }}>
-              <thead>
-                <tr>
-                  <th>Date</th>
-                  <th>Hours Slept</th>
-                  <th>Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sleepData.map((record, idx) => (
-                  <tr key={idx}>
-                    <td>{record.date}</td>
-                    <td>{record.hours}</td>
-                    <td>{record.notes || '-'}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
+    <div className="home-container">
+      <div className="hero-section">
+        <h1>Welcome, {userName || 'Guest'}</h1>
+        <p>Your personal sleep sanctuary. Track your nights, conquer your days.</p>
+        <Link to="/add" className="cta-button">Add New Sleep Record</Link>
+      </div>
+
+      <div className="features-section">
+        <div className="feature-card">
+          <h3>Track Your Sleep</h3>
+          <p>Log your sleep hours and monitor your patterns over time.</p>
         </div>
-      )}
+        <div className="feature-card">
+          <h3>Understand Your Habits</h3>
+          <p>Gain insights into your sleep quality and make improvements.</p>
+        </div>
+        <div className="feature-card">
+          <h3>View Your Progress</h3>
+          <p>Check your sleep history and see how you're progressing.</p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,34 +1,51 @@
 .sleep-form-container {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  max-width: 400px;
-  margin: 2rem auto;
+  background: #1e293b;
+  padding: 3rem;
+  border-radius: 16px;
+  max-width: 500px;
+  margin: 4rem auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #334155;
 }
 
 .sleep-form-container h2 {
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e2e8f0;
 }
 
-.sleep-form-container input,
-.sleep-form-container textarea {
+.sleep-form-container input {
   width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #334155;
+  border-radius: 8px;
   font-size: 1rem;
+  background: #2d3748;
+  color: #e2e8f0;
+  transition: border-color 0.3s ease;
 }
 
-.sleep-form-container button {
+.sleep-form-container input:focus {
+  border-color: #e94560;
+  outline: none;
+}
+
+.sleep-form-container button[type="submit"] {
   width: 100%;
-  padding: 0.75rem;
-  background: #1e3a8a;
+  padding: 1rem;
+  background: #e94560;
   color: #fff;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.sleep-form-container button[type="submit"]:hover {
+  background: #d83c56;
 }
