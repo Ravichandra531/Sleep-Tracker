@@ -18,13 +18,7 @@ function Login() {
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Enter Your Name</h2>
-        <input
-          type="text"
-          placeholder="Your Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+        <input type="text" placeholder="Your Name" value={name} onChange={(e) => setName(e.target.value)} required/>
         <button type="submit">Continue</button>
       </form>
     </div>

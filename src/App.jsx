@@ -4,7 +4,7 @@ import Home from './components/Home';
 import Stats from './components/Stats';
 import Login from './components/Login';
 import SleepForm from './components/SleepForm';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar';
 
 function App() {
   return (
